@@ -1,20 +1,13 @@
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import { MeuComponente } from "./components/MeuComponente";
 
-function MeuComponente() {
-  return (
-    <div>
-      <h1>Meu Título</h1>
-      <p>Meu primeiro parágrafo!</p>
-    </div>
-  );
-}
+//pfe-2024-2.vercel.app/
 
-function App() {
+https: function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <MeuComponente />
         <hr />
         <MeuComponente />
@@ -25,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
