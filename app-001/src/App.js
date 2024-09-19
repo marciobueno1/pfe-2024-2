@@ -4,7 +4,7 @@ import { MeuComponente } from "./components/MeuComponente";
 
 //pfe-2024-2.vercel.app/
 
-https: function Home() {
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
