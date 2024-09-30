@@ -40,12 +40,16 @@ export async function getContact(id) {
 }
 
 export async function updateContact(id, updates) {
-  await fakeNetwork();
-  let contacts = await localforage.getItem("contacts");
-  let contact = contacts.find((contact) => contact.id === id);
-  if (!contact) throw new Error("No contact found for", id);
+  const response = await fetch(`${baseURL}/${id}`, {
+    method: "PUT",
+    headers: headersJSON,
+    body: JSON.stringify(updates),
+  });
+  if (!response.ok) {
+    throw new Error("No contact found for", id);
+  }
+  const contact = await response.json();
   Object.assign(contact, updates);
-  await set(contacts);
   return contact;
 }
 
