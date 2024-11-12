@@ -19,7 +19,7 @@ const App = () => {
         type="number"
         placeholder="set value"
         value={number}
-        onChange={(evt) => setNumber(evt.target.value)}
+        onChange={(evt) => setNumber(parseInt(evt.target.value))}
       />
       <button onClick={() => updateBears(parseInt(number))}>Set Value</button>
     </>
